@@ -43,11 +43,11 @@
             android:text="Frappachino" />
 
         <Button
-            android:id="@+id/btnExpresso"
+            android:id="@+id/btnEspresso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick ="btnExpressoClicked"
-            android:text="Expresso" />
+            android:onClick ="btnEspressoClicked"
+            android:text="Espresso" />
 
     </TableRow>
 
@@ -142,7 +142,7 @@
             android:text="---" />
 
         <TextView
-            android:id="@+id/textCurrentDrinks"
+            android:id="@+id/textCurrentDrink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView" />

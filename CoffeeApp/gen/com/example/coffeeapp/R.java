@@ -33,7 +33,7 @@ public final class R {
         public static final int action_settings=0x7f090016;
         public static final int btnAddDrink=0x7f090010;
         public static final int btnCoffee=0x7f090004;
-        public static final int btnExpresso=0x7f090006;
+        public static final int btnEspresso=0x7f090006;
         public static final int btnFrappachino=0x7f090005;
         public static final int btnGrande=0x7f090009;
         public static final int btnHot=0x7f090002;
@@ -50,7 +50,7 @@ public final class R {
         public static final int tableRow6=0x7f09000f;
         public static final int tableRow7=0x7f090011;
         public static final int tableRow8=0x7f090013;
-        public static final int textCurrentDrinks=0x7f090015;
+        public static final int textCurrentDrink=0x7f090015;
         public static final int textDrinksAdded=0x7f090014;
     }
     public static final class layout {
