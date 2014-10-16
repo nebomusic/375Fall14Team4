@@ -18,7 +18,7 @@ public class Main extends Activity {
 	private Button btnCoffee;
 	private Button btnFrap;
 	private Button btnExpres;
-	private Button btnTall;
+	private Button btnTall; 
 	private Button btnGrande;
 	private Button btnVenti;
 	private Spinner spinnerFlavor;
@@ -35,7 +35,7 @@ public class Main extends Activity {
 		
 		// Initialize Orders
 		orders = new Orders();
-		currentDrink = new Drink();
+		CurrentDrink = new Drink();
 		
 		// Bind to XML
 		btnHot = (Button)findViewById(R.id.btnHot);
