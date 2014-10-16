@@ -1,17 +1,21 @@
 package com.example.coffeeapp;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 public class Main extends Activity {
 	// Field to hold Order data
 	private Orders orders;
-	private Drink curretnDrink;
+	private Drink currentDrink;
 	
 	// Fields for User Interface Objects
 	private Button btnHot;
@@ -19,6 +23,9 @@ public class Main extends Activity {
 	private Button btnFrap;
 	private Button btnExpres;
 	private Button btnTall; 
+	private Button btnFrappuccino;
+	private Button btnEspresso;
+	private Button btnTall;
 	private Button btnGrande;
 	private Button btnVenti;
 	private Spinner spinnerFlavor;
@@ -37,27 +44,83 @@ public class Main extends Activity {
 		orders = new Orders();
 		CurrentDrink = new Drink();
 		
+		
 		// Bind to XML
 		btnHot = (Button)findViewById(R.id.btnHot);
 		btnCoffee = (Button)findViewById(R.id.btnCoffee);
-		btnFrap = (Button)findViewById(R.id.btnFrap);
-		btnExpres = (Button)findViewById(R.id.btnExpres);
+		btnFrappuccino = (Button)findViewById(R.id.btnFrappachino);
+		btnEspresso = (Button)findViewById(R.id.btnEspresso);
 		btnTall = (Button)findViewById(R.id.btnTall);
 		btnGrande = (Button)findViewById(R.id.btnGrande);
 		btnVenti = (Button)findViewById(R.id.btnVenti);
 		spinnerFlavor = (Spinner)findViewById(R.id.spinnerFlavor);
 		spinnerDairy = (Spinner)findViewById(R.id.spinnerDairy);
 		btnAddDrink = (Button)findViewById(R.id.btnAddDrink);
-		btnResetDrink = (Button)findViewById(R.id.btnResetDrink);
+		btnResetDrink = (Button)findViewById(R.id.btnReset);
 		textDrinksAdded = (TextView)findViewById(R.id.textDrinksAdded);
 		textCurrentDrink = (TextView)findViewById(R.id.textCurrentDrink); 
 		
 		// Populate the Spinner for Flavor
-		ArrayAdapter<CharSequence> flavorAdapter = ArrayAdapter.createFromResource(this,
-				R.array.flavor_array, android.R.layout.simple_spinner_dropdown_item);
-		
-		// Specify the layout to use when the list of choices appears
+				ArrayAdapter<CharSequence> flavorAdapter = ArrayAdapter.createFromResource(this,
+						R.array.flavor_array, android.R.layout.simple_spinner_dropdown_item);
+		// Populate the Spinner for Dairy
+				ArrayAdapter<CharSequence> dairyAdapter = ArrayAdapter.createFromResource(this,
+						R.array.flavor_array, android.R.layout.simple_spinner_dropdown_item);
+				  
+				dairyAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+				spinnerDairy.setAdapter(dairyAdapter);
+				
+				// Specify the layout to use when the list of choices appears
+			flavorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+			
+			// Apply to the Spinner
+			spinnerFlavor.setAdapter(flavorAdapter);
+			 
 	}
+		
+		// Button to add drink
+		public void addDrinkClicked(View v){
+			// Set Flavor and Dairy from Spinners
+			currentDrink.setFlavor(String.valueOf(spinnerFlavor.getSelectedItem()));
+			currentDrink.setDairy(String.valueOf(spinnerDairy.getSelectedItem()));
+			//Add Drink to Orders
+			orders.addDrink(currentDrink);
+			// currentDrink = new Drink(); // Erase and Load new Drink
+			textDrinksAdded.setText(String.valueOf(orders.getNumDrinks()));
+			displayDrink(orders.getNumDrinks()-1);
+			resetDrink(v);
+			
+		}
+		
+		public void resetDrink(View v){
+			currentDrink = new Drink();
+			btnCoffee.setBackgroundColor(Color.LTGRAY);
+			btnFrappuccino.setBackgroundColor(Color.LTGRAY);
+			btnEspresso.setBackgroundColor(Color.LTGRAY);
+			
+			btnTall.setBackgroundColor(Color.LTGRAY);
+			btnGrande.setBackgroundColor(Color.LTGRAY);
+			btnVenti.setBackgroundColor(Color.LTGRAY);
+			
+		}
+		
+		private void displayDrink(int i){
+			String sOrder= "Just ordered: ";
+			Drink dDrink = orders.getDrink(i);
+			sOrder += String.valueOf(dDrink.getSize()) + " ounces of ";
+			sOrder += dDrink.getType() + " with ";
+			sOrder += dDrink.getFlavor() + " and ";
+			sOrder += dDrink.getDairy() + ".";
+			// Display the Drink
+			textCurrentDrink.setText(sOrder);
+		}
+
+		
+	 
+		 
+
+	
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -65,6 +128,59 @@ public class Main extends Activity {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
+	
+	// Function for the Hot/Cold Button
+	public void btnHotClicked(View v){
+		if (btnHot.getText() == "Hot"){
+			btnHot.setText("Cold");
+			btnHot.setBackgroundColor(Color.BLUE);
+			currentDrink.setHot(false);
+		}
+		else {
+			btnHot.setText("Hot");
+			btnHot.setBackgroundColor(Color.RED);
+			currentDrink.setHot(true);
+			
+		
+	}
+}
+	public void coffeeClicked(View v){
+		currentDrink.setType("Coffee");
+		btnCoffee.setBackgroundColor(Color.YELLOW);
+		btnFrappuccino.setBackgroundColor(Color.LTGRAY);
+		btnEspresso.setBackgroundColor(Color.LTGRAY);
+	}
+public void frappuccinoClicked(View v){
+	currentDrink.setType("Frappuccino");
+	btnCoffee.setBackgroundColor(Color.LTGRAY);
+	btnFrappuccino.setBackgroundColor(Color.LTGRAY);
+    btnEspresso.setBackgroundColor(Color.LTGRAY);
+}
+public void expressoClicked(View v){
+	currentDrink.setType("Espresso");
+	btnCoffee.setBackgroundColor(Color.LTGRAY);
+	btnFrappuccino.setBackgroundColor(Color.LTGRAY);
+	btnEspresso.setBackgroundColor(Color.YELLOW);
+}
+// Functions For Drink Sizes
+public void tallClicked(View v){
+	currentDrink.setSize(8);
+	btnTall.setBackgroundColor(Color.GREEN);
+	btnGrande.setBackgroundColor(Color.LTGRAY);
+	btnVenti.setBackgroundColor(Color.LTGRAY);
+}
+public void grandeClicked(View v){
+	currentDrink.setSize(12);
+	btnTall.setBackgroundColor(Color.LTGRAY);
+	btnGrande.setBackgroundColor(Color.GREEN);
+	btnVenti.setBackgroundColor(Color.LTGRAY);
+}
+public void ventiClicked(View v){
+	currentDrink.setSize(20);
+	btnTall.setBackgroundColor(Color.LTGRAY);
+	btnGrande.setBackgroundColor(Color.LTGRAY);
+	btnVenti.setBackgroundColor(Color.GREEN);
+}
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
