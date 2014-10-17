@@ -45,7 +45,7 @@ public class Main extends Activity {
 		// Bind to XML
 		btnHot = (Button)findViewById(R.id.btnHot);
 		btnCoffee = (Button)findViewById(R.id.btnCoffee);
-		btnFrappuccino = (Button)findViewById(R.id.btnFrappachino);
+		btnFrappuccino = (Button)findViewById(R.id.btnFrappuccino);
 		btnEspresso = (Button)findViewById(R.id.btnEspresso);
 		btnTall = (Button)findViewById(R.id.btnTall);
 		btnGrande = (Button)findViewById(R.id.btnGrande);
@@ -62,21 +62,19 @@ public class Main extends Activity {
 						R.array.flavor_array, android.R.layout.simple_spinner_dropdown_item);
 		// Populate the Spinner for Dairy
 				ArrayAdapter<CharSequence> dairyAdapter = ArrayAdapter.createFromResource(this,
-						R.array.flavor_array, android.R.layout.simple_spinner_dropdown_item);
+						R.array.dairy_array, android.R.layout.simple_spinner_dropdown_item);
 				  
 				dairyAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 				spinnerDairy.setAdapter(dairyAdapter);
 				
-				// Specify the layout to use when the list of choices appears
-			flavorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 			
-			// Apply to the Spinner
-			spinnerFlavor.setAdapter(flavorAdapter);
+ 				flavorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+				spinnerFlavor.setAdapter(flavorAdapter);
 			 
 	}
 		
 		// Button to add drink
-		public void addDrinkClicked(View v){
+		public void btnAddDrinkClicked(View v){
 			// Set Flavor and Dairy from Spinners
 			currentDrink.setFlavor(String.valueOf(spinnerFlavor.getSelectedItem()));
 			currentDrink.setDairy(String.valueOf(spinnerDairy.getSelectedItem()));
@@ -85,11 +83,6 @@ public class Main extends Activity {
 			// currentDrink = new Drink(); // Erase and Load new Drink
 			textDrinksAdded.setText(String.valueOf(orders.getNumDrinks()));
 			displayDrink(orders.getNumDrinks()-1);
-			resetDrink(v);
-			
-		}
-		
-		public void resetDrink(View v){
 			currentDrink = new Drink();
 			btnCoffee.setBackgroundColor(Color.LTGRAY);
 			btnFrappuccino.setBackgroundColor(Color.LTGRAY);
@@ -99,6 +92,20 @@ public class Main extends Activity {
 			btnGrande.setBackgroundColor(Color.LTGRAY);
 			btnVenti.setBackgroundColor(Color.LTGRAY);
 			
+			
+		}
+		
+		public void btnResetDrinkClicked(View v){
+			currentDrink = new Drink();
+			btnCoffee.setBackgroundColor(Color.LTGRAY);
+			btnFrappuccino.setBackgroundColor(Color.LTGRAY);
+			btnEspresso.setBackgroundColor(Color.LTGRAY);
+			
+			btnTall.setBackgroundColor(Color.LTGRAY);
+			btnGrande.setBackgroundColor(Color.LTGRAY);
+			btnVenti.setBackgroundColor(Color.LTGRAY);
+			
+			 textCurrentDrink.setText(" ");
 		}
 		
 		private void displayDrink(int i){
@@ -141,38 +148,38 @@ public class Main extends Activity {
 		
 	}
 }
-	public void coffeeClicked(View v){
+	public void btnCoffeeClicked(View v){
 		currentDrink.setType("Coffee");
 		btnCoffee.setBackgroundColor(Color.YELLOW);
 		btnFrappuccino.setBackgroundColor(Color.LTGRAY);
 		btnEspresso.setBackgroundColor(Color.LTGRAY);
 	}
-public void frappuccinoClicked(View v){
+public void btnFrappuccinoClicked(View v){
 	currentDrink.setType("Frappuccino");
 	btnCoffee.setBackgroundColor(Color.LTGRAY);
-	btnFrappuccino.setBackgroundColor(Color.LTGRAY);
+	btnFrappuccino.setBackgroundColor(Color.YELLOW);
     btnEspresso.setBackgroundColor(Color.LTGRAY);
 }
-public void expressoClicked(View v){
+public void btnEspressoClicked(View v){
 	currentDrink.setType("Espresso");
 	btnCoffee.setBackgroundColor(Color.LTGRAY);
 	btnFrappuccino.setBackgroundColor(Color.LTGRAY);
 	btnEspresso.setBackgroundColor(Color.YELLOW);
 }
 // Functions For Drink Sizes
-public void tallClicked(View v){
+public void btnTallClicked(View v){
 	currentDrink.setSize(8);
 	btnTall.setBackgroundColor(Color.GREEN);
 	btnGrande.setBackgroundColor(Color.LTGRAY);
 	btnVenti.setBackgroundColor(Color.LTGRAY);
 }
-public void grandeClicked(View v){
+public void btnGrandeClicked(View v){
 	currentDrink.setSize(12);
 	btnTall.setBackgroundColor(Color.LTGRAY);
 	btnGrande.setBackgroundColor(Color.GREEN);
 	btnVenti.setBackgroundColor(Color.LTGRAY);
 }
-public void ventiClicked(View v){
+public void btnVentiClicked(View v){
 	currentDrink.setSize(20);
 	btnTall.setBackgroundColor(Color.LTGRAY);
 	btnGrande.setBackgroundColor(Color.LTGRAY);
