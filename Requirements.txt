@@ -1,0 +1,7 @@
+These are the requirements for our app.
+
+1. A sound plays picked randomly from string of imported sounds
+2. screen appears in UI holding 4 poictures of rythyms
+3. Upon chosing the correct one, it goes to a congratulatory screen
+4. If wrong, button turns color and you must choose again
+5. After you press a button, it goes back to main screen and the process restarts
