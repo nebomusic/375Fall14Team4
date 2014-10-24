@@ -1,0 +1,13 @@
+These are the functions and classes for SilvaWinnProject.
+
+ Functions:
+1. multi intent onClick functions between 1 screen and 2, 2 screen and 3, 3 screen and 4, and 4 screen and 2
+2. counting function for screen 2 to automatically play sounds
+3. onClick function for a right answer clicked on screen 3
+4. Color changing onClick functions when the wrong answer is clicked
+5. Function that chooses the correct answer from the set of four as decided by the random sound played.
+ Classes:
+1. Activity Main
+2. Activity Sound
+3. Activity Answers
+4. Activity Congratulatory
