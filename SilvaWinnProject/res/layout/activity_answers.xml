@@ -15,24 +15,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/answer1"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-
     </TableRow>
 
     <TableRow
         android:id="@+id/tableRow2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/answer2"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:text="Button" />
 
     </TableRow>
 
@@ -41,24 +29,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/answer3"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:text="Button" />
-
     </TableRow>
 
     <TableRow
         android:id="@+id/tableRow4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
-
-        <Button
-            android:id="@+id/answer4"
-            android:layout_weight="1.0"
-            android:layout_height="wrap_content"
-            android:text="Button" />
 
     </TableRow>
 
