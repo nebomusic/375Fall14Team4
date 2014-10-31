@@ -3,7 +3,7 @@ package com.example.silvawinnproject;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
+import android.view.MenuItem; 
 
 public class Answers extends Activity {
 
@@ -12,7 +12,6 @@ public class Answers extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_answers);
 	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

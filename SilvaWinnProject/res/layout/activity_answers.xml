@@ -17,10 +17,9 @@
 
         <ImageButton
             android:id="@+id/imageButton1"
-            android:layout_weight="0.5"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity = "center"
-            android:src="@drawable/rhythmOne" />
+            android:src="@drawable/one" />
 
     </TableRow>
 
@@ -30,11 +29,10 @@
         android:layout_height="wrap_content" >
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/imageButton3"
             android:layout_weight="0.5"
             android:layout_height="wrap_content"
-            android:gravity = "center"
-            android:src="@drawable/rhythmTwo" />
+            android:src="@drawable/two" />
 
     </TableRow>
 
@@ -43,12 +41,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <ImageView
-            android:id="@+id/imageView1"
+        <ImageButton
+            android:id="@+id/imageButton2"
             android:layout_weight="0.5"
             android:layout_height="wrap_content"
-            android:gravity = "center"
-            android:src="@drawable/rhythmThree" />
+            android:src="@drawable/three" />
 
     </TableRow>
 
@@ -58,11 +55,10 @@
         android:layout_height="wrap_content" >
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/imageButton4"
             android:layout_weight="0.5"
             android:layout_height="wrap_content"
-            android:gravity = "center"
-            android:src="@drawable/rhythmFour" />
+            android:src="@drawable/four" />
 
     </TableRow>
 
