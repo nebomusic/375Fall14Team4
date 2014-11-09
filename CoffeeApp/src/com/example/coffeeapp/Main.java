@@ -25,7 +25,7 @@ public class Main extends Activity {
 	private Button btnTall; 
 	private Button btnFrappuccino;
 	private Button btnEspresso;
-	private Button btnTall;
+	// private Button btnTall;
 	private Button btnGrande;
 	private Button btnVenti;
 	private Spinner spinnerFlavor;
@@ -42,7 +42,7 @@ public class Main extends Activity {
 		
 		// Initialize Orders
 		orders = new Orders();
-		CurrentDrink = new Drink();
+		currentDrink = new Drink();
 		
 		
 		// Bind to XML

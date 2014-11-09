@@ -33,6 +33,7 @@
             android:id="@+id/buttonNext"
             android:layout_weight="1.0"
             android:layout_height="wrap_content"
+            android:onClick = "buttonNextClicked"
             android:text="Next" />
 
     </TableRow>

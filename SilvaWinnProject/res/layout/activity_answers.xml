@@ -15,11 +15,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/answer1"
-            android:layout_weight="1.0"
+        <ImageButton
+            android:id="@+id/imageButton1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:src="@drawable/one" />
 
     </TableRow>
 
@@ -28,11 +28,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/answer2"
-            android:layout_weight="1.0"
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_weight="0.5"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:src="@drawable/two" />
 
     </TableRow>
 
@@ -41,11 +41,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/answer3"
-            android:layout_weight="1.0"
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_weight="0.5"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:src="@drawable/three" />
 
     </TableRow>
 
@@ -54,11 +54,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/answer4"
-            android:layout_weight="1.0"
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_weight="0.5"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:src="@drawable/four" />
 
     </TableRow>
 
